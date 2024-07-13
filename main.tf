@@ -1,7 +1,11 @@
-provider "aws"{
-    region = "ap-south-1"
+provider "aws" {
+  region = "us-west-1"
 }
-resource "aws_instance" "my_ec2" {
-  ami           = "ami-01e074f40dfb9999d"
+resource "aws_instance" "terraform_ec2" {
+  ami           = "ami-0fb83b36371e7dab5"
   instance_type = "t2.micro"
+  tags = {
+    Name        = "ishara"
+    Environment = "test"
+  }
 }
